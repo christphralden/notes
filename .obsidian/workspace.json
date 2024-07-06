@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React/Architecture/Shared API Client.md",
-                "mode": "source",
+                "file": "React/Architecture/API Layer & Fetch Functions.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d6fe9c297f5a97d9",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "React/Architecture/Shared API Client.md",
+                "file": "React/Architecture/API Layer & Fetch Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "React/Architecture/Shared API Client.md",
+                "file": "React/Architecture/API Layer & Fetch Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "React/Architecture/Shared API Client.md"
+                "file": "React/Architecture/API Layer & Fetch Functions.md"
               }
             }
           }
@@ -148,9 +149,10 @@
   },
   "active": "9832e5fd5a748a43",
   "lastOpenFiles": [
+    "React/Architecture/API Layer & Fetch Functions.md",
     "React/Architecture/Shared API Client.md",
-    "Vim/Vim Keymaps.md",
     "Templates/Base.md",
+    "Vim/Vim Keymaps.md",
     "Templates",
     "React/Architecture",
     "React",

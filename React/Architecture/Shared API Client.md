@@ -1,17 +1,17 @@
 >2024-07-06 20:27
->Tags:
->Related:
+>Tags: #architecture
+>Related: [[React]] , [[API]] , [[Axios]]
 
----
+	---
 # Shared API Client
 Christopher Alden
 
 Sources:
 [Path To A Clean(er) React Architecture - Profy Dev](https://www.youtube.com/watch?v=GpRYT3CQ-Y0)
+<br>
+## Context?
 
-### Context?
-
-When creating a react application, we often use API to communicate our backend with our frontend.
+When creating a React Application, we often use API to communicate our backend with our frontend.
 This is usually located in the network layer of our application
 
 >Using basic React WebApp structure
@@ -43,7 +43,7 @@ This is usually located in the network layer of our application
 
 ```ts
 // hotel-room.ts
-export async function getRoomDetails(id:number): Promise<RoomDetail>{
+export async function getHotelRoomDetails(id:number): Promise<RoomDetail>{
 	const url = 'api/hotel/room/${encodeURIComponent(id)}'
 	const res = await fetch(url)
 	const data = await res.json()
@@ -54,7 +54,7 @@ export async function getRoomDetails(id:number): Promise<RoomDetail>{
 
 ```ts
 // hotel-room.ts
-export async function createRoomDetail(roomDetails:RoomDetails[]{
+export async function createHotelRoomDetails(roomDetails:RoomDetails[]{
 	const res = await fetch('api/hotel/room/create',{
 		method: "POST",
 		headers: { 'Content-Type': 'application/json' },
@@ -68,14 +68,14 @@ export async function createRoomDetail(roomDetails:RoomDetails[]{
 ```
 
 ---
-### What's wrong with this?
+## What's wrong with this?
 
 >You can clearly see a few problems in this shit code,
 >Lets review some things that should be changed and why.
 
 <br>
 
-##### 1. Magic Variables
+### 1. Magic Variables
 
 **It is better to keep the routes in a centralized file within the scope.**
 
@@ -86,7 +86,7 @@ API routes are hard coded into the functions making it hard to manage if theres 
 You would have to find the related API route distributed across your code base, which is not fun.
 <br>
 
-##### 2. Shared API Client
+### 2. Shared API Client
 
 **To increase modularity, use a shared API client when making a request.**
 
@@ -131,7 +131,7 @@ class APIClient{
 		this.baseURL = baseURL	
 	}
 
-	async request(url:string, options:string){
+	async request(url:string, options:string): Promise<any>{
 		const res = await fetch('${this.baseURL}${url}', options)
 		if(!res.ok){
 			const error = new HTTPError("Error Message"); // create this by extending Error
@@ -142,7 +142,7 @@ class APIClient{
 		return res.json()
 	}
 
-	get(url){
+	get(url:string){
 		return this.request(url,{
 			method: "GET",
 			headers: { 'Content-Type': 'application/json' },
