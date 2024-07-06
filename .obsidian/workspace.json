@@ -11,12 +11,8 @@
             "id": "9832e5fd5a748a43",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "React/Architecture/API Layer & Fetch Functions.md",
-                "mode": "preview",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -69,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d6fe9c297f5a97d9",
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "React/Architecture/API Layer & Fetch Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "React/Architecture/API Layer & Fetch Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "React/Architecture/API Layer & Fetch Functions.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -149,8 +140,10 @@
   },
   "active": "9832e5fd5a748a43",
   "lastOpenFiles": [
-    "React/Architecture/API Layer & Fetch Functions.md",
     "React/Architecture/Shared API Client.md",
+    "React/Architecture/API Layer & Fetch Functions.md",
+    "React/Architecture/API Layer & Data Transformation.md",
+    "Data Transformation.md",
     "Templates/Base.md",
     "Vim/Vim Keymaps.md",
     "Templates",

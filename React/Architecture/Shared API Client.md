@@ -2,7 +2,7 @@
 >Tags: #architecture
 >Related: [[React]] , [[API]] , [[Axios]]
 
-	---
+---
 # Shared API Client
 Christopher Alden
 
@@ -164,5 +164,3 @@ class APIClient{
 ---
 
 Now managing network requests is more scalable and has a better DX. 
-
-**Keep in mind that I also have no fucking clue**

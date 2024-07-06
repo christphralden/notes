@@ -9,14 +9,15 @@ Christopher Alden
 Sources:
 [Path To A Clean(er) React Architecture - Profy Dev](https://www.youtube.com/watch?v=tl6NuSL8euY)
 <br>
+## Context?
 
-### Context?
 When creating a [[React]] component, it's best to have a mental model for [[Self-Contained Components]].
 Basically a component should manage everything internally which includes the UI, state, data, and other related stuffs, or in other words encapsulated.
 
-This is because React promotes Component Based Architecture, you can more about this in [[Atomic Design Pattern]] which talks about how you can design better components for your React Application.
+This is because React promotes Component Based Architecture, you can read more about this in [[Atomic Design Pattern]] which talks about how you can design better components for your React Application.
 
 **But is your implementation correct?**
+
 Some people might get the wrong idea and just dump a bunch of shit into one component and pray. That is not recommended.
 
 >Lets take a look at this example:
@@ -25,18 +26,20 @@ Some people might get the wrong idea and just dump a bunch of shit into one comp
 export default function HotelRoomDetail(){
 	const [queryParameters] = useSearchParams()
     const id =  queryParameters.get("hotelId")
-    const [hotel, setHotel] = useState<HotelDetailsRoomDetails>()
+    const [hotelRoomDetails, setHotelRoomDetails] = useState<HotelDetailsRoomDetails>()
 	const [error, setError] = useState<Error|null>(null)
 	
 	useEffect(()=>{
 		const fetchHotelRoomDetails = async () =>{
 			try{
 				const res = await apiClient
-				.get('${API_ROUTES.getHotelDetails}${encodeURIComponent(id)}')	
+			.get('${API_ROUTES.getHotelRoomDetails}${encodeURIComponent(id)}')	
 			
 				// ... some business logic
 				
-				setHotel(res.data)	
+				const data = res.data
+				const transformedData = HotelRoomDetailsSchema.parse(data)		
+				setHotelRoomDetails(transformedData)	
 			}
 			catch(error:any){
 				setError(error)	
@@ -47,15 +50,15 @@ export default function HotelRoomDetail(){
 		if(id){
 			fetchHotelRoomDetails()
 		}
-	},[hotelId])
+	},[id])
 
-	if(!hotelId) return <Navigate to="/" />
+	if(!id) return <Navigate to="/" />
 	if(error) return null
 	if(!hotel) return <Loading/>
 
 	return(
 		<>
-			...UI Component
+			// ...UI Component
 		</>
 	)
 }
@@ -74,13 +77,13 @@ Yes we need Self-Contained Components, but in a way that is ==maintainable and s
 
 <br>
 
-### 1. Decoupling Fetching with UI
+### 1. Tight Coupling of Fetching with UI
 
 **It shouldn't matter how the IU gets the data, it just needs to know that the data will be served**
 
 The UI should not give a single fuck on how the data is fetched, what the API endpoint is, is it a data stream using [[Web Sockets]], is it using REST or RPC, and any other extra steps.
 
-We have to abstract the implementation of that by extracting functions to a separate place where is managed and maintained later on with respect to the scope of the feature.
+We have to abstract and decouple the implementation by extracting functions to a separate place to be managed and maintained later on with respect to the scope of the feature.
 
 > You would create a file `/api/hotel/hotel-room.ts` to encapsulate hotel-room logic.
 
@@ -88,7 +91,7 @@ We have to abstract the implementation of that by extracting functions to a sepa
 // hotel-room.ts
 export async function getHotelRoomDetails(id:number){
 	const res = await apiClient
-				.get('${API_ROUTES.getHotelDetails}${encodeURIComponent(id)}')	
+		.get('${API_ROUTES.getHotelRoomDetails}${encodeURIComponent(id)}')	
 	
 	// ... some business logic
 
@@ -100,7 +103,7 @@ export async function getHotelRoomDetails(id:number){
 export default function HotelRoomDetail(){
 	const [queryParameters] = useSearchParams()
     const id =  queryParameters.get("hotelId")
-    const [hotel, setHotel] = useState<HotelDetailsRoomDetails>()
+        const [hotelRoomDetails, setHotelRoomDetails] = useState<HotelDetailsRoomDetails>()
 	const [error, setError] = useState<Error|null>(null)
 	
 	useEffect(()=>{
@@ -108,8 +111,12 @@ export default function HotelRoomDetail(){
 			try{
 				// heres the change
 				const res = await HotelRooms.getHotelRoomDetails(Number(id))
+				
 				// ... some business logic
-				setHotel(res.data)	
+				
+				const data = res.data
+				const transformedData = HotelRoomDetailsSchema.parse(data)		
+				setHotelRoomDetails(transformedData)	
 			}
 			catch(error:any){
 				setError(error)	
@@ -120,9 +127,9 @@ export default function HotelRoomDetail(){
 		if(id){
 			fetchHotelRoomDetails()	
 		}
-	},[hotelId])
+	},[id])
 
-	if(!hotelId) return <Navigate to="/" />
+	if(!id) return <Navigate to="/" />
 	if(error) return null
 	if(!hotel) return <Loading/>
 
@@ -136,15 +143,15 @@ export default function HotelRoomDetail(){
 
 It might not seem much. But when considering larger scale application, using this pattern allows you to manage data fetching more efficiently and also decouples the relationship from the UI 
 
-This promotes better reusability for the UI since it can be reused with slight modifications, and the data fetching function itself for another component to use
+This promotes better reusability for the UI since it can be reused with slight modifications. The same goes for the data fetching function since it can be used for another component.
 
 
 <br>
 
 ### 2. Not using [[React-Query]] to do [[Client-Side]] fetching is a crime.
 
-Enough said.
+**Enough said.**
 <br>
 ### 3. Using [[Server-Side Rendering]] or [[Static-Site Generation]] to handle data fetching instead of Client-Side
 
-Its 2024.
+**Its 2024.**
