@@ -195,7 +195,7 @@ export function NavbarItems = ({label, children}:{
 	children:ReactNode
 	className: string
 }){
-	const {activeGroup, handleTabClick} = useNavbarContext();
+	const {activeGroup, handleGroupClick} = useNavbarContext();
 
 	return(
 		<>
@@ -203,7 +203,7 @@ export function NavbarItems = ({label, children}:{
 				{react.children.map(children, (child, i)=>{
 					<Button
 						key={i}
-						onclick={()=>handletabclick(i)}
+						onclick={()=>handleGroupClick(i)}
 						classname={}
 					>
 						{child.props.label}
@@ -258,4 +258,4 @@ Congratulations you've end up with some boilerplates, more code, and some enterp
 1. **Simple Components**. Do not over-engineer your application. [[KISS]], Keep It Simple Stupid.
 2. **Fast Iterations**. If you don't know how your component will look or iterate, don't build on this. Make sure you know how its designed and its functionality, then refactor to this pattern.
 
-**I did not test the code its purely for example**
+**I did not test the code its purely for example, example used was also just to demonstrate the pattern. Only use when a component needs shared state, complex functionality, and is closely related**
