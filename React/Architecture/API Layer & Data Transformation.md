@@ -32,7 +32,7 @@ export async function getFeed(){
 ```
 
 
-```ts
+```tsx
 export default function Feed(){
     const [feed, setFeed] = useState<FeedResponse>();
 	const [error, setError] = useState<Error|null>(null)
@@ -79,7 +79,7 @@ export default function Feed(){
 
 **Extract the Data Transformation process respective to the Fetch Function**
 
-Notice how the `users` and the `images`is processed first before being used?
+Notice how the `users` and the `images`are processed first before being used?
 
 In practical applications, we might use [[Zod]], where the the response is parsed and is attributes is ensured to match the schema we defined.
 
@@ -140,7 +140,7 @@ export async function getFeed(){
 }
 ```
 
-```ts
+```tsx
 export default function Feed(){
     const [feed, setFeed] = useState<{
 	   user: User[],

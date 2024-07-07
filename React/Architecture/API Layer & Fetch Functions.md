@@ -22,7 +22,7 @@ Some people might get the wrong idea and just dump a bunch of shit into one comp
 
 >Lets take a look at this example:
 
-```ts
+```tsx
 export default function HotelRoomDetail(){
 	const [queryParameters] = useSearchParams()
     const id =  queryParameters.get("hotelId")
@@ -99,7 +99,7 @@ export async function getHotelRoomDetails(id:number){
 }
 ```
 
-```ts
+```tsx
 export default function HotelRoomDetail(){
 	const [queryParameters] = useSearchParams()
     const id =  queryParameters.get("hotelId")
@@ -144,14 +144,12 @@ export default function HotelRoomDetail(){
 It might not seem much. But when considering larger scale application, using this pattern allows you to manage data fetching more efficiently and also decouples the relationship from the UI 
 
 This promotes better reusability for the UI since it can be reused with slight modifications. The same goes for the data fetching function since it can be used for another component.
-
-
 <br>
 
 ### 2. Not using [[React-Query]] to do [[Client-Side]] fetching is a crime.
 
 **Enough said.**
 <br>
-### 3. Using [[Server-Side Rendering]] or [[Static-Site Generation]] to handle data fetching instead of Client-Side
+### 3. Using Client-Side to handle data fetching instead of [[Server-Side Rendering]] or [[Static-Site Generation]]
 
 **Its 2024.**

@@ -11,8 +11,12 @@
             "id": "9832e5fd5a748a43",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "React/Advanced Patterns/Compound Components.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "React/Advanced Patterns/Compound Components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "React/Advanced Patterns/Compound Components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "React/Advanced Patterns/Compound Components.md"
+              }
             }
           }
         ]
@@ -140,9 +148,13 @@
   },
   "active": "9832e5fd5a748a43",
   "lastOpenFiles": [
-    "React/Architecture/Shared API Client.md",
-    "React/Architecture/API Layer & Fetch Functions.md",
     "React/Architecture/API Layer & Data Transformation.md",
+    "React/Advanced Patterns/Compound Components.md",
+    "React/Architecture/API Layer & Fetch Functions.md",
+    "React-Query.md",
+    "Screenshot 2024-07-07 at 16.28.06.png",
+    "React/Advanced Patterns",
+    "React/Architecture/Shared API Client.md",
     "Data Transformation.md",
     "Templates/Base.md",
     "Vim/Vim Keymaps.md",
