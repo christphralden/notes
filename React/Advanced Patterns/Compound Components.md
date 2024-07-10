@@ -100,45 +100,42 @@ export default function Navbar = () => {
 
 ```tsx
 // navbar-context.tsx
-interface NavbarContextProps{
-	activeGroup: number;
-	hanldeGroupClick: () => void;
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+// Define the shape of the context's value
+interface NavbarContextProps {
+  activeGroup: number;
+  handleGroupClick: (index: number) => void;
 }
 
-const function NavbarContext = createContext<NavbarContextProps | null>(
-	null
-)
+// Create the context with a default value of null
+const NavbarContext = createContext<NavbarContextProps | null>(null);
 
-export function NavbarContextProvider({children}:{
-	children:ReactNode
-}) {
-	const [activeGroup, setActiveGroup] = useState<number>(0)
-	
-	function handleGroupClick{
-		setActiveGroup(index)	
-	}
+// Create a provider component
+export function NavbarContextProvider({ children }: { children: ReactNode }) {
+  const [activeGroup, setActiveGroup] = useState<number>(0);
 
-	return(
-		<NavbarContext.Provider 
-			value={{
-				activeGroup, 
-				handleGroupClick
-			}}
-		>
-			{children}
-		</NavbarContext.Provider>
-	)
+  // Function to handle group click and update the active group
+  function handleGroupClick(index: number) {
+    setActiveGroup(index);
+  }
+
+  return (
+    <NavbarContext.Provider value={{ activeGroup, handleGroupClick }}>
+      {children}
+    </NavbarContext.Provider>
+  );
 }
 
-//create the hook to use the context
-export const useNavbarContext = () =>{
-	const context = useContext(NavbarContext)
+// Create a custom hook to use the context
+export const useNavbarContext = () => {
+  const context = useContext(NavbarContext);
 
-	if(!context){
-		throw new ContextError("Message") //create by extending error
-	}
+  if (!context) {
+    throw new Error("useNavbarContext must be used within a NavbarContextProvider");
+  }
 
-	return context;
+  return context;
 }
 ```
 
