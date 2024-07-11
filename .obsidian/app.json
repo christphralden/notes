@@ -7,5 +7,6 @@
   "showInlineTitle": false,
   "showRibbon": true,
   "foldIndent": true,
-  "tabSize": 2
+  "tabSize": 2,
+  "attachmentFolderPath": "./_attachments"
 }

@@ -1,5 +1,5 @@
 >2024-07-07 16:00
->Tags:
+>Tags: #react #patterns #refactoring
 >Related:
 
 ---
@@ -18,7 +18,8 @@ Now the first thought that comes to mind is solving this using Context API to ma
 
 >Lets say something interactive and complicated like a navbar dropdown with additional menu groups
 
-![[Screenshot 2024-07-07 at 16.28.06.png]]<br>
+![[Screenshot 2024-07-07 at 19.04.19.png]]
+
 That's a single context created just for managing a navbar. Imagine how you would manage it if there are multiple complex component tree.
 
 ### Why you should rethink your approach

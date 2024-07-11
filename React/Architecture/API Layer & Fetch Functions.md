@@ -1,5 +1,5 @@
 >2024-07-06 22:15
->Tags: #architecture #refactoring
+>Tags: #react #architecture #api-layer
 >Related: [[API Layer]], [[React-Query]], [[Self-Contained Components]], [[Atomic Design Pattern]]
 
 ---

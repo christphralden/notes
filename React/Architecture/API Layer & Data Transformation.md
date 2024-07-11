@@ -1,5 +1,5 @@
 >2024-07-07 00:37
->Tags:
+>Tags: #react #react #architecture #api-layer
 >Related:
 
 ---

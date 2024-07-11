@@ -11,12 +11,8 @@
             "id": "9832e5fd5a748a43",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "React/Advanced Patterns/Compound Components.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#react",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +61,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "React/Advanced Patterns/Compound Components.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "React/Advanced Patterns/Compound Components.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "React/Advanced Patterns/Compound Components.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,18 +139,23 @@
       "switcher:Open quick switcher": true
     }
   },
-  "active": "9832e5fd5a748a43",
+  "active": "644541315a178552",
   "lastOpenFiles": [
-    "React/Architecture/API Layer & Data Transformation.md",
     "React/Advanced Patterns/Compound Components.md",
-    "React/Architecture/API Layer & Fetch Functions.md",
-    "React-Query.md",
-    "Screenshot 2024-07-07 at 16.28.06.png",
-    "React/Advanced Patterns",
     "React/Architecture/Shared API Client.md",
+    "React/Architecture/API Layer & Fetch Functions.md",
+    "React/Architecture/API Layer & Data Transformation.md",
+    "React/Advanced Patterns/_attachments/Screenshot 2024-07-07 at 19.04.19.png",
+    "React/Advanced Patterns/_attachments",
+    "React/Advanced Patterns/attachments/Screenshot 2024-07-07 at 19.03.42.png",
+    "React/Advanced Patterns/attachments",
+    "React/Advanced Patterns/Screenshot 2024-07-07 at 19.02.39.png",
+    "Screenshot 2024-07-07 at 16.28.06.png",
+    "Vim/Vim Keymaps.md",
+    "React-Query.md",
+    "React/Advanced Patterns",
     "Data Transformation.md",
     "Templates/Base.md",
-    "Vim/Vim Keymaps.md",
     "Templates",
     "React/Architecture",
     "React",
