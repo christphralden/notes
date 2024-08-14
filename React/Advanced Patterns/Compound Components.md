@@ -8,9 +8,9 @@ Christopher Alden
 
 Sources:
 <br>
-## Context?
+## Context
 
-When creating a complicated UI, often we break it into chunks of components, as mentioned in [[Atomic Design Pattern]]. More often than not, you find yourself having hundreds of components and drilling props into multiple child components.
+When create a complicated UI, often we break it into chunks of components, as mentioned in [[Atomic Design Pattern]]. More often than not, you find yourself having hundreds of components and drilling props into multiple child components.
 
 ### Introducing [[Context API]]
 
@@ -103,7 +103,7 @@ export default function Navbar = () => {
 // navbar-context.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Define the shape of the context's value
+// Define the shape of the context's valu
 interface NavbarContextProps {
   activeGroup: number;
   handleGroupClick: (index: number) => void;
